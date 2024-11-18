@@ -13,6 +13,8 @@ def add(text, date):
     text = text.replace('b', 'bbb').replace('B', 'Bbb')
     date_obj = datetime.datetime.strptime(date, "%Y-%m-%d").date()
     items.append(Item(text, date_obj))
+    # Sortieren nach Datum
+    items.sort(key=lambda x: x.date)
 
 def get_all():
     return items
